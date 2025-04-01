@@ -68,27 +68,10 @@ var rootCmd = &cobra.Command{
 		if result == defaultProfile {
 			result = ""
 		}
-		//fmt.Println(fmt.Sprintf("export AWS_PROFILE=%s", result))
-		// if err := exec.Command("alias", `awspp="source ./cmd/run.sh"`).Run(); err != nil {
-		// 	fmt.Println(err.Error())
-		// 	os.Exit(1)
-		// }
-		// out, err := exec.Command("ls", "-la").Output()
-		// if err != nil {
-		// 	fmt.Println(err.Error())
-		// 	os.Exit(1)
-		// }
-		// fmt.Println(string(out))
-
-		//shellCommand := fmt.Sprintf("awspp %s", result)
 		if err := os.WriteFile(homeDir+"/.awsp", []byte(result), 0644); err != nil {
 			fmt.Println(err.Error())
 			os.Exit(1)
 		}
-		// if err := exec.Command("bash", "./cmd/run.sh", result).Run(); err != nil {
-		// 	fmt.Println(err.Error())
-		// 	os.Exit(1)
-		// }
 	},
 }
 

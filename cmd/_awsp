@@ -1,5 +1,5 @@
 #!/bin/sh
-AWS_PROFILE="$AWS_PROFILE" _awsp
+AWS_PROFILE="$AWS_PROFILE" ./awsp_profile
 
 selected_profile="$(cat ~/.awsp)"
 
